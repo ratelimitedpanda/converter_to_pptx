@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Конвертатор</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Конвертатор в .pptx</h1>
+    <form id="convert-form" enctype="multipart/form-data">
+        <label>Файл (.pdf или .docx)</label>
+        <input type="file" name="document" accept=".pdf,.docx" required>
+
+        <label>Страницы для сканирования</label>
+        <input type="text" name="pages" placeholder="например: 1-5,8 (пусто = все страницы)">
+        <div class="hint">Работает и для PDF, и для DOCX. Для DOCX разбивка на страницы приблизительная (как в Word, без запуска самого Word).</div>
+
+        <label>Модель в LM Studio</label>
+        <input type="text" name="model" value="google/gemma-3n-e4b:2">
+        <div class="hint">Должен быть запущен локальный сервер LM Studio (обычно http://localhost:1234)</div>
+
+        <button type="submit" id="submit-btn">Сгенерировать презентацию</button>
+        <div id="status"></div>
+    </form>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
