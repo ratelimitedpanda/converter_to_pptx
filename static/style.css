@@ -1,0 +1,46 @@
+body {
+  font-family: Arial, sans-serif;
+  max-width: 600px;
+  margin: 60px auto;
+}
+
+label {
+  display: block;
+  margin-top: 16px;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="file"] {
+  width: 100%;
+  padding: 8px;
+  margin-top: 4px;
+  box-sizing: border-box;
+}
+
+button {
+  margin-top: 24px;
+  padding: 10px 24px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.hint {
+  color: #666;
+  font-size: 13px;
+  margin-top: 4px;
+}
+
+#status {
+  margin-top: 16px;
+  font-weight: bold;
+  display: none;
+}
+
+#status.ok {
+  color: #1a7a1a;
+}
+
+#status.error {
+  color: #c0392b;
+}
