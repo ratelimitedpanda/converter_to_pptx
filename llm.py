@@ -1,9 +1,9 @@
 import json
 import re
 
-import requests
+from openai import OpenAI
 
-LM_STUDIO_URL = "http://localhost:1234/v1/chat/completions"
+openai_client = OpenAI(base_url="http://localhost:1234/v1", api_key="lm-studio")
 JUNK_BULLET_RE = re.compile(r"^\s*(страница\s*)?\d{1,4}\s*\.?\s*$", re.IGNORECASE)
 
 PROMPT = """Ты помогаешь превратить текст страницы документа в слайд презентации.
@@ -34,17 +34,13 @@ def make_slide_content(text, model="local-model"):
     if not text.strip():
         return {"title": "", "bullets": []}
 
-    response = requests.post(
-        LM_STUDIO_URL,
-        json={
-            "model": model,
-            "messages": [{"role": "user", "content": PROMPT.format(text=text[:6000])}],
-            "temperature": 0.3,
-        },
+    response = openai_client.chat.completions.create(
+        model=model,
+        messages=[{"role": "user", "content": PROMPT.format(text=text[:6000])}],
+        temperature=0.3,
         timeout=180,
     )
-    response.raise_for_status()
-    reply = response.json()["choices"][0]["message"]["content"]
+    reply = response.choices[0].message.content
 
     return _parse_reply(reply, text)
 
