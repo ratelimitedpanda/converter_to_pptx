@@ -1,7 +1,28 @@
 # PDF (.docx) to .pptx конвертер
 
-Работает через локальное веб-приложение, для работы нужна локально развернутая модель (через LM Studio)
+Программа работает через локальное веб-приложение, для работы нужна локально развернутая модель (через LM Studio)
 
+## Пример работы
+
+### Входные данные в формате .pdf
+
+<table>
+<tr>
+<td><img width="263" height="374" alt="image" src="https://github.com/user-attachments/assets/28e77017-6315-465a-8656-9d76b5086b29" /></td>
+<td><img width="265" height="374" alt="image" src="https://github.com/user-attachments/assets/0d0f78ee-0a57-46f8-b1aa-2d6ce704c30c" /></td>
+<td><img width="265" height="364" alt="image" src="https://github.com/user-attachments/assets/ec1e4787-349d-4e16-bb3d-2657017f2b3a" /></td>
+</tr>
+</table>
+
+### Выходные данные в формате .pptx
+
+<table>
+<tr>
+<td><img width="648" height="366" alt="image" src="https://github.com/user-attachments/assets/118d7e6e-f55f-43bc-8ad9-72805ccf2470" /></td>
+<td><img width="648" height="363" alt="image" src="https://github.com/user-attachments/assets/9fda1126-4e05-4ec8-9ba3-9446a55343c4" /></td>
+<td><img width="652" height="366" alt="image" src="https://github.com/user-attachments/assets/daeadee8-3570-481b-a707-df06ecf26258" /></td>
+</tr>
+</table>
 
 ## Перед работой нам надо
 
