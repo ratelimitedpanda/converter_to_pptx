@@ -2,4 +2,4 @@ flask
 pymupdf
 python-docx
 python-pptx
-requests
+openai
